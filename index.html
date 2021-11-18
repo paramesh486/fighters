@@ -1,0 +1,62 @@
+
+   
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="false" position="0 8 20"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <a-asset-item id="table-obj" src="./Superman/tinker.obj"></a-asset-item>
+      <a-asset-item id="table-mtl" src="./Superman/obj.mtl"></a-asset-item>
+
+      <a-asset-item id="terrain-obj" src="./models/terrain/tinker.obj"></a-asset-item>
+      <a-asset-item id="terrain-mtl" src="./models/terrain/obj.mtl"></a-asset-item>
+
+      <a-asset-item id="table-gltf" src="./Superman/Superrman.glb"></a-asset-item>
+      <a-asset-item id="terrainMap" src="./models/terrain/Terrain.glb"></a-asset-item>
+      
+    </a-assets>
+    
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+   
+    
+  
+    <!-------------------------------------Room Walls----------------------------------------------->
+ 
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <a-entity obj-model="obj: #table-obj; mtl: #table-mtl"  position="5 0 0" rotation="-90 -40 0" scale="0.1 0.1 0.1 "
+    ></a-entity>
+
+
+       
+    <a-entity obj-model="obj: #terrain-obj; mtl: #terrain-mtl"  position="5 0 0" rotation="-90 -40 0" scale="0.1 0.1 0.1 "
+    ></a-entity>
+
+
+    <a-entity
+    id="terrain"
+    gltf-model="#terrainMap"
+    position="0 0 -100"
+    scale="0.3 0.3 0.3"
+    animation="property: position; to: 0 0 100;easing:linear; loop: true; dur: 150000"
+  
+  >
+  </a-entity>
+
+
+
+  </a-scene>
+</body>
+
+</html>
